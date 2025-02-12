@@ -1,0 +1,22 @@
+#window {
+  background-color: #0d0d0d;
+}
+
+#text{
+  color: #ebdbb2;
+}
+
+#text:selected{
+  color: #0d0d0d;
+}
+
+#entry:selected{
+  background-color: #b57614;
+  color: #0d0d0d;
+}
+
+#input{
+  border-color: #b57614;
+  background-color: #0d0d0d;
+  color: #ebdbb2;
+}
