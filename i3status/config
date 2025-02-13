@@ -1,0 +1,43 @@
+general {
+        colors = true
+        interval = 1
+}
+
+order += "memory"
+order += "cpu_usage"
+order += "disk /"
+order += "ethernet enp42s0"
+order += "volume master"
+order += "tztime local"
+
+volume master {
+		format = "♪: %volume"
+		format_muted = "♪: muted (%volume)"
+		device = "default"
+		mixer = "Master"
+		mixer_idx = 0
+}
+
+ethernet enp42s0 {
+        format_up = "%ip"
+        format_down = "down"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+        hide_if_equals_localtime = true
+}
+
+cpu_usage {
+        format = "CPU: %usage"
+}
+
+memory {
+        format = "RAM: %used / %total"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "SPACE: %free"
+}
