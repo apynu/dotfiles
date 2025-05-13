@@ -15,6 +15,7 @@ return {
 			require("luasnip.loaders.from_vscode").lazy_load()
 
 			local cmp = require("cmp")
+			local lspconfig = require("lspconfig")
 
 			cmp.setup({
 				snippet = {
@@ -39,6 +40,9 @@ return {
 					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
+				}),
+				lspconfig.clangd.setup({
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
 				}),
 			})
 		end,
